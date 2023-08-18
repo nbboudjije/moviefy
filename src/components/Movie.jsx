@@ -2,7 +2,10 @@ import React from "react";
 
 const Movie = ({ movie, id }) => {
   return (
-    <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block relative p-2">
+    <div
+      key={id}
+      className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block relative p-2"
+    >
       <img
         src={`https://image.tmdb.org/t/p/w500/${movie?.backdrop_path}`}
         alt=""
