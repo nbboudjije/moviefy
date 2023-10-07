@@ -5,19 +5,22 @@ import Signup from "./pages/Signup";
 import Account from "./pages/Account";
 import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar";
+import AuthContect from "./context/AuthContect";
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/" element={<Login />} />
-          <Route path="/" element={<Signup />} />
-          <Route path="/" element={<Account />} />
-          <Route path="/" element={<Profile />} />
-        </Routes>
+        <AuthContect>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </AuthContect>
       </Router>
     </div>
   );

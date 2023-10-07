@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import requests from "../Requests";
 import { FaStar, FaCalendar, FaPlay, FaArrowCircleDown } from "react-icons/fa";
+
+import { motion } from "framer-motion";
+import { fadeAnimation } from "../motion";
 const Hero = () => {
   const [movie, setMovie] = useState([]);
 
@@ -36,7 +39,10 @@ const Hero = () => {
           alt="/"
           className="w-full h-screen object-cover"
         />
-        <div className="absolute top-[20%] text-white p-4 md:p-8">
+        <motion.div
+          className="absolute top-[20%] text-white p-4 md:p-8"
+          {...fadeAnimation}
+        >
           <h1 className="text-2xl md:text-4xl font-bold">
             {randomMovie?.title}
           </h1>
@@ -61,7 +67,7 @@ const Hero = () => {
           <p className="flex flex-row items-center gap-2">
             <FaStar /> {randomMovie?.vote_average}
           </p>
-        </div>
+        </motion.div>
       </div>
       <div className="absolute right-[1%] top-[90%]">
         <button className="text-white animate-bounce">
